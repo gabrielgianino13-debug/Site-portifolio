@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriel Gianini | Portfólio</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background:#f5f5f5;
+            color:#333;
+        }
+
+        header{
+            background:#1e293b;
+            color:white;
+            text-align:center;
+            padding:60px 20px;
+        }
+
+        header h1{
+            font-size:2.5rem;
+            margin-bottom:10px;
+        }
+
+        header p{
+            color:#cbd5e1;
+        }
+
+        .container{
+            max-width:1000px;
+            margin:40px auto;
+            padding:0 20px;
+        }
+
+        .projetos{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+            gap:20px;
+        }
+
+        .card{
+            background:white;
+            border-radius:12px;
+            padding:20px;
+            box-shadow:0 4px 10px rgba(0,0,0,0.1);
+            transition:0.3s;
+        }
+
+        .card:hover{
+            transform:translateY(-5px);
+        }
+
+        .card h3{
+            margin-bottom:10px;
+            color:#1e293b;
+        }
+
+        .card p{
+            margin-bottom:15px;
+            color:#666;
+        }
+
+        .btn{
+            display:inline-block;
+            text-decoration:none;
+            background:#2563eb;
+            color:white;
+            padding:10px 16px;
+            border-radius:8px;
+            transition:0.3s;
+        }
+
+        .btn:hover{
+            background:#1d4ed8;
+        }
+
+        footer{
+            text-align:center;
+            padding:30px;
+            margin-top:40px;
+            color:#777;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Gabriel Gianini</h1>
+    <p>Desenvolvedor Web • PHP • HTML • CSS • JavaScript</p>
+</header>
+
+<div class="container">
+
+    <h2 style="margin-bottom:20px;">Meus Projetos</h2>
+
+    <div class="projetos">
+
+        <div class="card">
+            <h3>Sistema de Eventos</h3>
+            <p>Sistema desenvolvido em PHP e MySQL para gerenciamento de eventos.</p>
+            <a href="#" class="btn" target="_blank">Ver Projeto</a>
+        </div>
+
+        <div class="card">
+            <h3>Site de Casamento</h3>
+            <p>Landing page personalizada para noivos e convidados.</p>
+            <a href="#" class="btn" target="_blank">Ver Projeto</a>
+        </div>
+
+        <div class="card">
+            <h3>Organizador de Tarefas</h3>
+            <p>Aplicativo para controle de atividades e produtividade.</p>
+            <a href="#" class="btn" target="_blank">Ver Projeto</a>
+        </div>
+
+        <!-- DUPLIQUE ESTE BLOCO PARA NOVOS PROJETOS -->
+
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Gabriel Gianini - Todos os direitos reservados.
+</footer>
+
+</body>
+</html>

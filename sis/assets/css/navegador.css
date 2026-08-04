@@ -1,0 +1,342 @@
+/* Estilos do Noivei para navegador e telas a partir de 768px. */
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cor-primaria: #f4a9c6;
+            --cor-secundaria: #f7d9e3;
+            --cor-texto: #444;
+            --cor-fundo: #fff9fb;
+            --cor-destaque: #ffcdd4;
+            --sombra: 0 10px 40px rgba(0,0,0,0.08);
+            --transicao: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--cor-fundo);
+            color: var(--cor-texto);
+            line-height: 1.6;
+        }
+
+        .page-wrapper {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 80px 20px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            height: auto;
+            min-height: 0;
+            aspect-ratio: var(--hero-aspect-ratio, 16 / 9);
+            background-size: 100% 100%;
+            background-position: top center;
+            background-repeat: no-repeat;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3); /* Overlay escuro para melhorar legibilidade */
+            z-index: 1;
+            pointer-events: none; /* Garante que nÃ£o interfira com cliques */
+        }
+        
+        /* Overlay adicional branco para suavizar ainda mais */
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.15);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2; /* Acima dos overlays */
+            width: 100%;
+            max-width: 800px;
+            margin-top: 0;
+        }
+
+        .hero-names {
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: nowrap;
+            white-space: nowrap;
+            gap: 5px;
+        }
+
+        .hero-names span {
+            display: inline-block;
+            padding: 0 8px;
+            flex-shrink: 0;
+        }
+
+        .hero-ampersand {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .hero-date {
+            font-size: 1rem;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        .hero-message {
+            font-size: 1rem;
+            max-width: 420px;
+            margin: 0 auto 30px;
+            color: #666;
+            text-align: center;
+        }
+        
+        .hero-countdown-section .hero-message {
+            margin-bottom: 30px;
+        }
+
+        .hero-countdown-section {
+            width: 100%;
+            padding: 40px 20px;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: var(--cor-fundo);
+        }
+
+        .countdown {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .countdown-item {
+            background: white;
+            border-radius: 16px;
+            padding: 15px 18px;
+            min-width: 70px;
+            box-shadow: var(--sombra);
+        }
+
+        .countdown-number {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .countdown-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #999;
+        }
+
+        .section {
+            padding: 40px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #888;
+            margin-bottom: 25px;
+        }
+
+        .about {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--cor-fundo);
+            border-radius: 16px;
+            box-shadow: var(--sombra);
+            padding: 25px 20px;
+        }
+
+        .about p {
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        .album {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .album-image-wrapper {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--sombra);
+            background: #eee;
+            width: 100%;
+            max-width: 600px;
+            height: 400px;
+            margin: 0 auto;
+        }
+
+        .album-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .album-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 14px;
+        }
+
+        .album-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: none;
+            background-color: rgba(0,0,0,0.15);
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .album-dot.active {
+            background-color: var(--cor-primaria);
+            transform: scale(1.2);
+        }
+
+        .location-card {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--cor-fundo);
+            border-radius: 16px;
+            box-shadow: var(--sombra);
+            overflow: hidden;
+        }
+
+        .location-info {
+            padding: 20px;
+        }
+
+        .location-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .location-info p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .location-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--cor-secundaria);
+            color: #654;
+            padding: 6px 10px;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            margin-bottom: 10px;
+        }
+
+        .location-map iframe {
+            width: 100%;
+            border: 0;
+            height: 260px;
+        }
+
+        .site-embed-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            width: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--sombra);
+            background: white;
+            min-height: 400px;
+        }
+
+        .site-embed-container iframe {
+            width: 100%;
+            min-height: 400px;
+            border: none;
+            display: block;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.75rem;
+            color: #aaa;
+        }
+
+        
+        
+        
+
+@media (min-width: 768px) {
+    .hero--color {
+        /* Cor/gradiente ocupa metade da altura que a imagem teria. */
+        aspect-ratio: var(--hero-color-aspect-ratio, 32 / 9);
+    }
+
+    .hero-names {
+                font-size: 3rem;
+                gap: 8px;
+            }
+            
+            .hero-names span {
+                padding: 0 12px;
+            }
+
+            .countdown-number {
+                font-size: 1.8rem;
+            }
+
+            .countdown-item {
+                padding: 18px 22px;
+                min-width: 90px;
+            }
+
+            .location-card {
+                display: grid;
+                grid-template-columns: 1.1fr 1.4fr;
+            }
+
+            .location-map iframe {
+                height: 100%;
+            }
+        }

@@ -1,0 +1,97 @@
+/* Regras exclusivas para telas de até 767px. */
+@media (max-width: 767px) {
+            .hero {
+                padding: 56px 16px 32px;
+                min-height: clamp(420px, 78svh, 620px);
+                aspect-ratio: auto;
+                /* Preserva a altura inteira da foto no celular; corta somente
+                   as laterais quando necessÃ¡rio, nunca a parte de baixo. */
+                background-size: auto 100%;
+                background-position: center bottom;
+            }
+
+            .hero-names {
+                width: 100%;
+                max-width: 100%;
+                font-size: clamp(1.15rem, 6vw, 1.8rem);
+                letter-spacing: clamp(0px, 0.25vw, 1px);
+                flex-wrap: wrap;
+                white-space: normal;
+                gap: 0;
+            }
+
+            .hero-names span {
+                padding: 0 3px;
+                overflow-wrap: anywhere;
+            }
+
+            .hero-ampersand {
+                font-size: clamp(1.1rem, 5vw, 1.5rem);
+            }
+
+            .hero-countdown-section {
+                padding: 32px 16px;
+            }
+
+            .countdown {
+                display: grid;
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+                gap: 8px;
+                width: 100%;
+                max-width: 360px;
+            }
+
+            .countdown-item {
+                min-width: 0;
+                padding: 13px 4px;
+                border-radius: 12px;
+            }
+
+            .countdown-number {
+                font-size: clamp(1.2rem, 6vw, 1.5rem);
+            }
+
+            .countdown-label {
+                font-size: clamp(0.55rem, 2.5vw, 0.7rem);
+                letter-spacing: .5px;
+            }
+
+            .album-image-wrapper {
+                /* No celular, o Ã¡lbum Ã© o elemento visual principal.
+                   MantÃ©m uma Ã¡rea alta para a foto nÃ£o parecer miniatura. */
+                height: clamp(420px, 70svh, 620px);
+                max-width: none;
+                border-radius: 16px;
+            }
+            
+            .hero-names {
+                font-size: 1.8rem;
+                letter-spacing: 1px;
+                gap: 3px;
+            }
+            
+            .hero-names span {
+                padding: 0 5px;
+            }
+            
+            .hero-ampersand {
+                font-size: 1.5rem;
+            }
+        }
+
+@media (max-width: 480px) {
+            .hero-names {
+                font-size: clamp(1.1rem, 6vw, 1.5rem);
+                letter-spacing: 0;
+                gap: 0;
+            }
+            
+            .hero-names span {
+                padding: 0 3px;
+            }
+            
+            .hero-ampersand {
+                font-size: 1.2rem;
+            }
+        }
+
